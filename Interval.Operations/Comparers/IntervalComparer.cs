@@ -31,7 +31,7 @@ namespace Operations.Comparers
             }
 
             var upperBoundComparer = new UpperBoundComparer<TPoint>(
-                pointComparer: this.comparer);
+                comparer: this.comparer);
 
             return upperBoundComparer.Compare(
                 left: left.UpperBound,

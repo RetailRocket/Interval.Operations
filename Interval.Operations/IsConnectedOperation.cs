@@ -8,13 +8,13 @@ namespace Operations
         public static bool IsConnected<TPoint>(
             this Interval.Interval<TPoint> first,
             Interval.Interval<TPoint> second,
-            IComparer<TPoint> pointComparer)
+            IComparer<TPoint> comparer)
         {
             var lowerBoundComparer = new LowerBoundComparer<TPoint>(
-                comparer: pointComparer);
+                comparer: comparer);
 
             var upperBoundComparer = new UpperBoundComparer<TPoint>(
-                pointComparer: pointComparer);
+                comparer: comparer);
 
             return lowerBoundComparer.Compare(
                        left: first.LowerBound,

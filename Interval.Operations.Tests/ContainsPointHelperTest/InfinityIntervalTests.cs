@@ -1,5 +1,6 @@
 namespace OperationsTests.ContainsPointHelperTest
 {
+    using System;
     using System.Collections.Generic;
     using Interval.IntervalBound.LowerBound;
     using Interval.IntervalBound.UpperBound;
@@ -18,9 +19,6 @@ namespace OperationsTests.ContainsPointHelperTest
         public void Contains(
             int point)
         {
-            var intervalComparer = new IntervalComparer<int>(
-                comparer: Comparer<int>.Default);
-
             Assert.True(
                 condition: new Interval.Interval<int>(
                         lowerBound: new InfinityLowerBound<int>(),
@@ -28,6 +26,24 @@ namespace OperationsTests.ContainsPointHelperTest
                     .Contains(
                         point: point,
                         comparer: Comparer<int>.Default));
+        }
+
+        [Fact]
+        public void Comparer()
+        {
+            var interval = new Interval.Interval<string>(
+                lowerBound: new InfinityLowerBound<string>(),
+                upperBound: new InfinityUpperBound<string>());
+
+            Assert.True(
+                condition: interval.Contains(
+                    point: "B",
+                    comparer: StringComparer.Ordinal));
+
+            Assert.True(
+                condition: interval.Contains(
+                    point: "B",
+                    comparer: StringComparer.OrdinalIgnoreCase));
         }
     }
 }

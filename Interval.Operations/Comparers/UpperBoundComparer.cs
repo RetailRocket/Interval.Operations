@@ -8,12 +8,12 @@ namespace Operations.Comparers
     public class UpperBoundComparer<TPoint>
         : IComparer<IUpperBound<TPoint>>
     {
-        private readonly IComparer<TPoint> pointComparer;
+        private readonly IComparer<TPoint> comparer;
 
         public UpperBoundComparer(
-            IComparer<TPoint> pointComparer)
+            IComparer<TPoint> comparer)
         {
-            this.pointComparer = pointComparer;
+            this.comparer = comparer;
         }
 
         public int Compare(
@@ -33,7 +33,7 @@ namespace Operations.Comparers
             var leftPointedBorder = (IPointedBound<TPoint>)left;
             var rightPointedBorder = (IPointedBound<TPoint>)right;
 
-            var resultOfComparisonsPointedBorders = this.pointComparer
+            var resultOfComparisonsPointedBorders = this.comparer
                 .Compare(
                     x: leftPointedBorder.Point,
                     y: rightPointedBorder.Point);

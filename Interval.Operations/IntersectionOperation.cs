@@ -10,17 +10,17 @@ namespace Operations
         public static Option<Interval<TPoint>> Intersect<TPoint>(
             this Interval<TPoint> left,
             Interval<TPoint> right,
-            IComparer<TPoint> pointComparer)
+            IComparer<TPoint> comparer)
         {
             if (!left.IsConnected(
                 second: right,
-                pointComparer: pointComparer))
+                comparer: comparer))
             {
                 return Option.None<Interval<TPoint>>();
             }
 
             var lowerBoundComparer = new LowerBoundComparer<TPoint>(
-                comparer: pointComparer);
+                comparer: comparer);
 
             var lowerBound = lowerBoundComparer.Compare(
                                  left: left.LowerBound,
@@ -29,7 +29,7 @@ namespace Operations
                 : right.LowerBound;
 
             var upperBoundComparer = new UpperBoundComparer<TPoint>(
-                pointComparer: pointComparer);
+                comparer: comparer);
 
             var upperBound = upperBoundComparer.Compare(
                                  left: left.UpperBound,

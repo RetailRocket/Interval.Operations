@@ -4,9 +4,9 @@ namespace Operations
     using Interval;
     using Interval.IntervalBound;
 
-    public static class GetBoundPointsOperation
+    public static class GetBoundariesPointsOperation
     {
-        public static List<TPoint> GetBoundPoints<TPoint>(
+        public static List<TPoint> GetBoundariesPoints<TPoint>(
             this Interval<TPoint> interval)
         {
             var result = new List<TPoint>();

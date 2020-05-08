@@ -1,5 +1,6 @@
 namespace OperationsTests.ContainsPointHelperTest
 {
+    using System;
     using System.Collections.Generic;
     using Interval.IntervalBound.LowerBound;
     using Interval.IntervalBound.UpperBound;
@@ -20,9 +21,6 @@ namespace OperationsTests.ContainsPointHelperTest
             int upperBoundaryPoint,
             int point)
         {
-            var intervalComparer = new IntervalComparer<int>(
-                comparer: Comparer<int>.Default);
-
             Assert.True(
                 condition: new Interval.Interval<int>(
                         lowerBound: new OpenLowerBound<int>(lowerBoundaryPoint),
@@ -44,9 +42,6 @@ namespace OperationsTests.ContainsPointHelperTest
             int upperBoundaryPoint,
             int point)
         {
-            var intervalComparer = new IntervalComparer<int>(
-                comparer: Comparer<int>.Default);
-
             Assert.False(
                 condition: new Interval.Interval<int>(
                         lowerBound: new OpenLowerBound<int>(lowerBoundaryPoint),
@@ -54,6 +49,24 @@ namespace OperationsTests.ContainsPointHelperTest
                     .Contains(
                         point: point,
                         comparer: Comparer<int>.Default));
+        }
+
+        [Fact]
+        public void Comparer()
+        {
+            var interval = new Interval.Interval<string>(
+                lowerBound: new OpenLowerBound<string>("a"),
+                upperBound: new OpenUpperBound<string>("z"));
+
+            Assert.False(
+                condition: interval.Contains(
+                    point: "B",
+                    comparer: StringComparer.Ordinal));
+
+            Assert.True(
+                condition: interval.Contains(
+                    point: "B",
+                    comparer: StringComparer.OrdinalIgnoreCase));
         }
     }
 }

@@ -19,7 +19,7 @@ namespace OperationsTests.ComparersTests.UpperBoundComparer
             int value)
         {
             var upperBoundComparer = new UpperBoundComparer<int>(
-                pointComparer: Comparer<int>.Default);
+                comparer: Comparer<int>.Default);
 
             var comparisonsA = upperBoundComparer.Compare(
                 left: new ClosedUpperBound<int>(value),
@@ -41,7 +41,7 @@ namespace OperationsTests.ComparersTests.UpperBoundComparer
             int openBorderValue)
         {
             var upperBoundComparer = new UpperBoundComparer<int>(
-                pointComparer: Comparer<int>.Default);
+                comparer: Comparer<int>.Default);
 
             var comparisonsA = upperBoundComparer.Compare(
                 left: new ClosedUpperBound<int>(closedBorderValue),
@@ -63,7 +63,7 @@ namespace OperationsTests.ComparersTests.UpperBoundComparer
             int openBorderValue)
         {
             var upperBoundComparer = new UpperBoundComparer<int>(
-                pointComparer: Comparer<int>.Default);
+                comparer: Comparer<int>.Default);
 
             var comparisonsA = upperBoundComparer.Compare(
                 left: new ClosedUpperBound<int>(closedBorderValue),
@@ -84,7 +84,7 @@ namespace OperationsTests.ComparersTests.UpperBoundComparer
             int openBorderValue)
         {
             var upperBoundComparer = new UpperBoundComparer<int>(
-                pointComparer: Comparer<int>.Default);
+                comparer: Comparer<int>.Default);
 
             var comparisonsA = upperBoundComparer.Compare(
                 left: new ClosedUpperBound<int>(closedBorderValue),
@@ -105,7 +105,7 @@ namespace OperationsTests.ComparersTests.UpperBoundComparer
             int openBorderValue)
         {
             var upperBoundComparer = new UpperBoundComparer<int>(
-                pointComparer: Comparer<int>.Default);
+                comparer: Comparer<int>.Default);
 
             var comparisonsA = upperBoundComparer.Compare(
                 left: new ClosedUpperBound<int>(closedBorderValue),
@@ -128,7 +128,7 @@ namespace OperationsTests.ComparersTests.UpperBoundComparer
             int value)
         {
             var upperBoundComparer = new UpperBoundComparer<int>(
-                pointComparer: Comparer<int>.Default);
+                comparer: Comparer<int>.Default);
 
             var comparisonsA = upperBoundComparer.Compare(
                 left: new InfinityUpperBound<int>(),
@@ -151,7 +151,7 @@ namespace OperationsTests.ComparersTests.UpperBoundComparer
             int value)
         {
             var upperBoundComparer = new UpperBoundComparer<int>(
-                pointComparer: Comparer<int>.Default);
+                comparer: Comparer<int>.Default);
 
             var comparisonsA = upperBoundComparer.Compare(
                 left: new InfinityUpperBound<int>(),
