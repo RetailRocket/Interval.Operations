@@ -41,7 +41,7 @@ Assert.True(
         comparer: StringComparer.OrdinalIgnoreCase)); // => false
 ```
 
-#### Get Boundaries Points
+### Get Boundaries Points
 
 ```csharp
 var interval = new Interval.Interval<int>(
