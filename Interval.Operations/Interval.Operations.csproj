@@ -12,10 +12,10 @@
         <PackageVersion>0.0.1</PackageVersion>
         <Authors>Andrey Chizh, Artem Noskov</Authors>
         <Company>Retail Rocket</Company>
-        <RepositoryUrl>https://github.com/RetailRocket/Interval</RepositoryUrl>
+        <RepositoryUrl>https://github.com/RetailRocket/Interval.Operations</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <Title>
-            Interval Library Project
+            Interval Operations Library
         </Title>
         <PackageDescription>
             Library of operations for interval type. There are operations of comparisons for low and upper boundary and for entri interval, operation to check interval for containing point etc.
